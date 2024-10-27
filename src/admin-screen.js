@@ -10,7 +10,8 @@ import { useDispatch } from '@wordpress/data';
 /**
  * Internal dependencies.
  */
-import General from './general-fields/general';
+import Title from './general-fields/title';
+import Description from './general-fields/description';
 
 const adminScreen = () => {
 
@@ -20,7 +21,7 @@ const adminScreen = () => {
         'site',
         'gutenberg-explore-general'
     );
-    
+
     const { saveEditedEntityRecord } = useDispatch( 'core' );
 
     if ( ! generalSettings ) {
@@ -31,11 +32,17 @@ const adminScreen = () => {
 
     return(
         <div>
-            <h1 className="wp-heading-inline">Gutenberg Explore From React!</h1>
+            <h1 className="wp-heading-inline">{ __( 'Gutenberg Explore From React!', 'gutenberg-explore' ) }</h1>
 
-            <General
+            <Title
                 settings = { generalSettings }
                 title={ title }
+                updateCallback={ setGeneralSettings }
+            />
+            
+            <Description
+                settings = { generalSettings }
+                desc={ desc }
                 updateCallback={ setGeneralSettings }
             />
 

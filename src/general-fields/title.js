@@ -1,7 +1,7 @@
 import { TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
-const General = ( { settings, title = '', updateCallback } ) => {
+const Title = ( { settings, title = '', updateCallback } ) => {
 
 	return (
 		<TextControl
@@ -17,4 +17,4 @@ const General = ( { settings, title = '', updateCallback } ) => {
 	);
 
 }
-export default General;
+export default Title;

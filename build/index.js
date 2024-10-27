@@ -22,9 +22,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_core_data__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_core_data__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _general_fields_general__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./general-fields/general */ "./src/general-fields/general.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _general_fields_title__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./general-fields/title */ "./src/general-fields/title.js");
+/* harmony import */ var _general_fields_description__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./general-fields/description */ "./src/general-fields/description.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
 /**
  * WordPress dependencies.
  */
@@ -37,6 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies.
  */
+
 
 
 const adminScreen = () => {
@@ -52,15 +54,19 @@ const adminScreen = () => {
     title,
     desc
   } = generalSettings;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
       className: "wp-heading-inline",
-      children: "Gutenberg Explore From React!"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_general_fields_general__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Gutenberg Explore From React!', 'gutenberg-explore')
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_general_fields_title__WEBPACK_IMPORTED_MODULE_5__["default"], {
       settings: generalSettings,
       title: title,
       updateCallback: setGeneralSettings
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_general_fields_description__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      settings: generalSettings,
+      desc: desc,
+      updateCallback: setGeneralSettings
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Button, {
       variant: "primary",
       onClick: () => {
         // Now save the updated data.
@@ -74,10 +80,10 @@ const adminScreen = () => {
 
 /***/ }),
 
-/***/ "./src/general-fields/general.js":
-/*!***************************************!*\
-  !*** ./src/general-fields/general.js ***!
-  \***************************************/
+/***/ "./src/general-fields/description.js":
+/*!*******************************************!*\
+  !*** ./src/general-fields/description.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -93,7 +99,46 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const General = ({
+const Description = ({
+  settings,
+  desc = '',
+  updateCallback
+}) => {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextareaControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Description', 'gutenberg-explore'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Main description help text.', 'gutenberg-explore'),
+    value: desc,
+    onChange: value => updateCallback({
+      ...settings,
+      desc: value
+    }),
+    className: "regular-text"
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Description);
+
+/***/ }),
+
+/***/ "./src/general-fields/title.js":
+/*!*************************************!*\
+  !*** ./src/general-fields/title.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const Title = ({
   settings,
   title = '',
   updateCallback
@@ -109,7 +154,7 @@ const General = ({
     className: "regular-text"
   });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (General);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Title);
 
 /***/ }),
 

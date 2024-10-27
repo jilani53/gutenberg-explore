@@ -71,8 +71,8 @@ class gutenbergExplore {
             array(
                 'type'              => 'object',
                 'default'           => array(
-                    'title' => 'Field label',
-                    'desc'  => 'Field description.',
+                    'title' => 'Main Title',
+                    'desc'  => 'Description.',
                 ),
                 'show_in_rest'      => array(
                     'schema' => array(

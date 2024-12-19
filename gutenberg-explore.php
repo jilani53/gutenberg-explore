@@ -4,7 +4,7 @@
  * Description: Explore how to use the Gutenberg editor
  * Version: 0.0.1
  * Author: Jilani Ahmed 
- * Author URI: https://wpninjadevs.com/
+ * Author URI: 
  * Text Domain: gutenberg-explore
  * Domain Path: /languages
  * 
